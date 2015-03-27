@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>:: Grumbler ::</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-default" data-ng-controller="HeaderController">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="">Grumbler</a>
+                </div>
+                
+                <ul class="nav navbar-nav">
+                    <li><a href="#/timeline">Timeline</a></li>
+                    <li><a href="#/followers">Followers</a></li>
+                    <li><a href="#/following">Following</a></li>
+                    <li><a href="#/users">Users</a></li>
+                </ul>
+                
+                <ul class="nav navbar-nav navbar-right">
+                    <li data-ng-if="UserService.loginUrl"><a data-ng-href="{{::UserService.loginUrl}}">Sign-In</a></li>
+                    <li data-ng-if="UserService.logoutUrl"><a data-ng-href="{{::UserService.logoutUrl}}">{{::UserService.account.id}}</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <div data-ng-view>Carregando ...</div>
+        </div>
+        
+        <script data-main="js/main" src="js/lib/require/2.1.11/require.min.js"></script>
+    </body>
+</html>

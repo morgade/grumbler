@@ -1,0 +1,27 @@
+<div class="page-header hidden-sm hidden-xs">
+    <h1>Timeline <small> Everyone is grumbling !</small></h1>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <form>
+            <div class="input-group input-group-lg">
+                <input type="text" class="form-control" placeholder="Grumble here ..."  data-ng-model="status.body" />
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" data-ng-click="post()">Grumble !</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<ul class="list-group">
+    <li data-ng-repeat="status in timeline" class="list-group-item">
+        <h4 class="list-group-item-heading">{{status.sender.id}}</h4>
+        <p class="list-group-item-text">
+            {{status.body}}
+            <em class="pull-right">{{status.timestamp | date: 'medium'}}</em>
+        </p>
+    </li>
+</ul>

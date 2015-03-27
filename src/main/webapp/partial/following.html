@@ -1,0 +1,10 @@
+<div class="page-header hidden-sm hidden-xs">
+    <h1>Following <small> They are not your friends !</small></h1>
+</div>
+
+<ul class="list-group">
+    <li data-ng-repeat="account in following" class="list-group-item">
+        {{account.id}}
+        <a href="" class="pull-right" data-ng-click="unfollow(account.id)">Unfollow</a>
+    </li>
+</ul>

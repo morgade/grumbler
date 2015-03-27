@@ -1,0 +1,11 @@
+<div class="page-header hidden-sm hidden-xs">
+    <h1>Users <small> Lots of fakes !</small></h1>
+</div>
+
+<ul class="list-group">
+    <li data-ng-repeat="account in accounts" class="list-group-item">
+        {{account.id}}
+        <a href="" data-ng-if="account.follows" class="pull-right" data-ng-click="unfollow(account)">Unfollow</a>
+        <a href="" data-ng-if="!account.follows" class="pull-right" data-ng-click="follow(account)">Follow</a>
+    </li>
+</ul>
